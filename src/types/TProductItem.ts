@@ -1,4 +1,4 @@
-interface ProductItem {
+interface TProductItem {
     category: string,
     description: string,
     id: number,
@@ -11,4 +11,4 @@ interface ProductItem {
     title: string,
 }
 
-export default ProductItem;
+export default TProductItem;

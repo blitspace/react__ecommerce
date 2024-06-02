@@ -21,7 +21,7 @@ function Header({}: HeaderProps) {
                 <nav aria-label="Global" className="hidden md:block">
                     <ul className="flex items-center gap-6 text-sm">
                         {appContext?.menu?.map(i => (
-                            <li>
+                            <li key={i.label}>
                                 <a className="text-gray-500 transition hover:text-gray-500/75" href={i.url}>{i.label}</a>
                             </li>
                         ))}

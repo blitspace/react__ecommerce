@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
@@ -10,16 +10,48 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-import ProductItem from './types/ProductItem';
+import TProductItem from './types/TProductItem';
 
 
 const queryClient = new QueryClient()
 
+function ProductItem({ image, title, description, price }: TProductItem) {
+    return (
+        <a href="#" className="group block">
+            <img
+                src={image}
+                alt=""
+                className="w-full object-cover aspect-square object-top"
+            />
+
+            <div className="mt-3 flex justify-between text-sm">
+                <div>
+                    <h3 className="text-gray-900 group-hover:underline group-hover:underline-offset-4">{title}</h3>
+
+                    <p
+                        className="mt-1.5 text-pretty text-xs text-gray-500"
+                        aria-description={description}
+                    >
+                        {description
+                            .split(' ')
+                            .slice(0, 20)
+                            .join(' ')
+                        }...
+                    </p>
+                </div>
+
+                <p className="text-gray-900">${price}</p>
+            </div>
+        </a>
+    );
+}
+
 function Qq() {
-    const q = useQuery<ProductItem[]>({
+    const q = useQuery<TProductItem[]>({
         queryKey: ['products'],
         queryFn: async () => {
             console.log('%cFetching', 'padding: 4px 12px; background-color: orange');
+
             const response = await fetch('https://fakestoreapi.com/products');
             const data = await response.json();
 
@@ -35,23 +67,11 @@ function Qq() {
         console.log(q.data);
     }
 
-    return (<div className="grid grid-cols-4 gap-2">
-        {q?.data?.map((i: ProductItem) => (
-        <div
-            key={i.id}
-            className="flex flex-col basis-1/2 md:basis-1/4 bg-gray-100 p-4 rounded-md"
-        >
-            <div className="mb-2">
-                <img src={i.image} className="aspect-square object-cover object-top" />
-            </div>
-            <h3 className="mb-2"><strong>{i.title}</strong></h3>
-            <hr className="mb-2" />
-            <p><small>{i.description
-                .split(' ')
-                .slice(0, 30)
-                .join(' ')
-            }</small></p>
-        </div>
+    return (<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8 gap-12">
+        {q?.data?.map((i: TProductItem) => (
+            <Fragment key={i.id}>
+                <ProductItem {...i} />
+            </Fragment>
         ))}
     </div>)
 }
