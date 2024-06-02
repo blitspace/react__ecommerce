@@ -19,7 +19,7 @@ function Qq() {
     const q = useQuery<ProductItem[]>({
         queryKey: ['products'],
         queryFn: async () => {
-            console.log('%cFetching', 'background-color: orange');
+            console.log('%cFetching', 'padding: 4px 12px; background-color: orange');
             const response = await fetch('https://fakestoreapi.com/products');
             const data = await response.json();
 
@@ -28,27 +28,29 @@ function Qq() {
     });
 
     if (q.isFetching) {
-        return (<>Loading...</>);
+        return (<h2>Loading...</h2>);
     }
 
     if (q.isSuccess) {
         console.log(q.data);
     }
 
-    return (<div className="flex flex-row gap-4 w-full flex-wrap">
+    return (<div className="grid grid-cols-4 gap-2">
         {q?.data?.map((i: ProductItem) => (
         <div
             key={i.id}
-            className="flex flex-col basis-1/6 bg-gray-100 p-4 rounded-md"
+            className="flex flex-col basis-1/2 md:basis-1/4 bg-gray-100 p-4 rounded-md"
         >
-            <img src={i.image} />
+            <div className="mb-2">
+                <img src={i.image} className="aspect-square object-cover object-top" />
+            </div>
             <h3 className="mb-2"><strong>{i.title}</strong></h3>
             <hr className="mb-2" />
-            <p>{i.description
+            <p><small>{i.description
                 .split(' ')
                 .slice(0, 30)
                 .join(' ')
-            }</p>
+            }</small></p>
         </div>
         ))}
     </div>)
