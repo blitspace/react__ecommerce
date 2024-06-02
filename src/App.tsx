@@ -58,7 +58,33 @@ function App() {
     const [store] = useState<Store>({
         theme: {
             darkMode: false,
-        }
+        },
+        menu: [
+            {
+                label: 'About',
+                url: '',
+            },
+            {
+                label: 'Careers',
+                url: '',
+            },
+            {
+                label: 'History',
+                url: '',
+            },
+            {
+                label: 'Services',
+                url: '',
+            },
+            {
+                label: 'Projects',
+                url: '',
+            },
+            {
+                label: 'Blogs',
+                url: '',
+            },
+        ]
     });
 
     return (

@@ -1,7 +1,11 @@
 type Store = {
-    theme: {
-        darkMode: boolean;
+    theme?: {
+        darkMode?: boolean;
     },
+    menu?: {
+        label?: string,
+        url?: string,
+    }[],
 };
 
 
