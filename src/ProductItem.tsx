@@ -14,7 +14,7 @@ function ProductItem({ image, title, description, price }: TProductItem) {
                 <div>
                     <h3 className="text-gray-900 group-hover:underline group-hover:underline-offset-4">{title}</h3>
 
-                    <p
+                    {/* <p
                         className="mt-1.5 text-pretty text-xs text-gray-500"
                         aria-description={description}
                     >
@@ -23,10 +23,10 @@ function ProductItem({ image, title, description, price }: TProductItem) {
                             .slice(0, 20)
                             .join(' ')
                         }...
-                    </p>
+                    </p> */}
                 </div>
 
-                <p className="text-gray-900">${price}</p>
+                <p className="text-gray-900 font-bold">${price}</p>
             </div>
         </a>
     );
