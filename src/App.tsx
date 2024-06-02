@@ -5,6 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { AppContext } from './context/AppContext';
 import Store from './types/Store';
+import ProductList from './ProductList';
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
           <Header />
         </header>
         <section className="App-content">
-          {store?.theme?.darkMode ? "Dark Mode" : "Light Mode"}
+          <ProductList />
         </section>
         <footer className="App-footer">
           <Footer />
