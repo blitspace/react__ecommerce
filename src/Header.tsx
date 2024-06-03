@@ -14,7 +14,7 @@ function Header({}: HeaderProps) {
         <div className="flex h-16 items-center gap-8 px-4 sm:px-6 lg:px-8">
             <a className="block text-teal-600" href="#">
                 <span className="sr-only">Home</span>
-                <Logo />
+                <Logo width={40} />
             </a>
 
             <div className="flex flex-1 items-center justify-end md:justify-between">
