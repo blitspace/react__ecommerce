@@ -17,9 +17,8 @@ function Filter({}: FilterProps) {
                 <div>
                     <FilterInputSearch onChange={handleSearch} />
                     <ButtonPrimary
-                        label="Search"
                         onClick={() => alert()}
-                    />
+                    >Search</ButtonPrimary>
                 </div>
                 <div>Sort</div>
             </div>

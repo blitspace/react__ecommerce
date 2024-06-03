@@ -1,14 +1,18 @@
+import { ReactNode } from "react";
+
 interface ButtonPrimaryProps {
-    label: string;
+    className?: string;
     onClick?: () => void;
+    children?: string | ReactNode;
 }
 
-function ButtonPrimary({ label, onClick }: ButtonPrimaryProps) {
+function ButtonPrimary({ className, onClick, children }: ButtonPrimaryProps) {
     return (
         <button
-            className="border p-2"
+            className={`border p-2 ${className}`}
             onClick={onClick}
-        >{label}</button>
+            type="button"
+        >{ children }</button>
     );
 }
 
