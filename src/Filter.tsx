@@ -18,6 +18,9 @@ function Filter({}: FilterProps) {
                     <FilterInputSearch onChange={handleSearch} />
                     <ButtonPrimary
                         onClick={() => alert()}
+                        rounded={false}
+                        display="inline-block"
+                        border={true}
                     >Search</ButtonPrimary>
                 </div>
                 <div>Sort</div>

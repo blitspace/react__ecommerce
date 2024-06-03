@@ -14,27 +14,17 @@ function ProductItem({ image, title, description, price }: TProductItem) {
                 />
             </div>
 
-            <div className="mt-3 flex justify-between text-sm grow">
+            <div className="mt-3 flex flex-col justify-between text-sm grow">
                 <div>
-                    <h3 className="text-gray-900 group-hover:underline group-hover:underline-offset-4">{title}</h3>
-                    {/* <p
-                        className="mt-1.5 text-pretty text-xs text-gray-500"
-                        aria-description={description}
-                    >
-                        {description
-                            .split(' ')
-                            .slice(0, 20)
-                            .join(' ')
-                        }...
-                    </p> */}
+                    <h3 className="text-gray-900 x--group-hover:underline x--group-hover:underline-offset-4">{title}</h3>
                 </div>
 
                 <p className="text-gray-900 font-bold">${price}</p>
             </div>
 
-            <div>
-                <ButtonPrimary className="w-full flex">
-                    <><ShoppingCart className="mr-1" /> Add to Cart</>
+            <div className="mt-4">
+                <ButtonPrimary className="w-full flex justify-center items-center">
+                    <><ShoppingCart className="mr-2" /> Add to Cart</>
                 </ButtonPrimary>
             </div>
         </div>
