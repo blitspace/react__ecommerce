@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import TProductItem from "./types/TProductItem";
 import ProductItem from "./ProductItem";
 import Filter from "./Filter";
+import Settings from "./settings";
 
 
 function ProductList() {
@@ -13,7 +14,7 @@ function ProductList() {
         queryFn: async () => {
             console.log('%cFetching', 'padding: 4px 12px; background-color: orange');
 
-            const response = await fetch('https://fakestoreapi.com/products');
+            const response = await fetch(Settings.api_source);
             const data = await response.json();
 
             return data;
