@@ -10,6 +10,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import Counter from './Counter';
 
 
 
@@ -58,6 +59,7 @@ function App() {
                         <Header />
                     </header>
                     <section className="App-content">
+                        <Counter />
                         <ProductList />
                     </section>
                     <footer className="App-footer">

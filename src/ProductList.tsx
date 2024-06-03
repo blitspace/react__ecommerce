@@ -5,21 +5,11 @@ import { useQuery } from "@tanstack/react-query";
 import TProductItem from "./types/TProductItem";
 import ProductItem from "./ProductItem";
 import Filter from "./Filter";
-import Settings from "./settings";
+import ProductsQuery from "./queries/Products";
 
 
 function ProductList() {
-    const q = useQuery<TProductItem[]>({
-        queryKey: ['products'],
-        queryFn: async () => {
-            console.log('%cFetching', 'padding: 4px 12px; background-color: orange');
-
-            const response = await fetch(Settings.api_source);
-            const data = await response.json();
-
-            return data;
-        }
-    });
+    const q = ProductsQuery();
 
     if (q.isFetching) {
         return (<h2>Loading...</h2>);
