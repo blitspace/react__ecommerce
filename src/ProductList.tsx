@@ -1,7 +1,5 @@
 import { Fragment } from "react";
 
-import { useQuery } from "@tanstack/react-query";
-
 import TProductItem from "./types/TProductItem";
 import ProductItem from "./ProductItem";
 import Filter from "./Filter";
