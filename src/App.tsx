@@ -9,6 +9,9 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+
 
 const queryClient = new QueryClient()
 
@@ -49,6 +52,7 @@ function App() {
     return (
         <QueryClientProvider client={queryClient}>
             <AppContext.Provider value={store}>
+                <ReactQueryDevtools initialIsOpen={false} />
                 <div className="App">
                     <header className="App-header">
                         <Header />
