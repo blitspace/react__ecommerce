@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import ButtonPrimary from "./ButtonPrimary";
+import Button from "./Button";
 import FilterInputSearch from "./FilterSearch";
 import { ArrowDown01, ArrowDownAZ, Filter as FilterIcon } from "lucide-react";
 
@@ -21,12 +21,12 @@ function Filter({}: FilterProps) {
                 <div><FilterIcon style={iconsStyle} className="text-teal-700" /> Filter</div>
                 <div>
                     <FilterInputSearch onChange={handleSearch} />
-                    <ButtonPrimary
+                    <Button
                         onClick={() => alert()}
                         rounded={false}
                         display="inline-block"
                         border={true}
-                    >Search</ButtonPrimary>
+                    >Search</Button>
                 </div>
                 <div className="">
                     <span className="mr-2">Sort</span>

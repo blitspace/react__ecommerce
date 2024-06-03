@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 
-interface ButtonPrimaryProps {
+interface ButtonProps {
     element?: 'a' | 'button';
     buttonType?: 'primary' | 'secondary';
     className?: string;
@@ -13,7 +13,7 @@ interface ButtonPrimaryProps {
     href?: string,
 }
 
-function ButtonPrimary({
+function Button({
     className,
     onClick,
     children,
@@ -23,7 +23,7 @@ function ButtonPrimary({
     buttonType = 'primary',
     element = 'button',
     href='#'
-}: ButtonPrimaryProps) {
+}: ButtonProps) {
     const primary   = 'text-white bg-teal-600 hover:bg-teal-700';
     const secondary = 'text-teal-600 bg-gray-100 hover:text-teal-600/75';
     const _className =  `
@@ -60,4 +60,4 @@ function ButtonPrimary({
     }
 }
 
-export default ButtonPrimary;
+export default Button;

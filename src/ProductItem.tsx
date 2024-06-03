@@ -1,4 +1,4 @@
-import ButtonPrimary from "./ButtonPrimary";
+import Button from "./Button";
 import TProductItem from "./types/TProductItem";
 import { ShoppingCart } from "lucide-react";
 
@@ -23,9 +23,9 @@ function ProductItem({ image, title, price }: TProductItem) {
             </div>
 
             <div className="mt-4">
-                <ButtonPrimary className="w-full flex justify-center items-center" buttonType="primary">
+                <Button className="w-full flex justify-center items-center" buttonType="primary">
                     <><ShoppingCart className="mr-2" /> Add to Cart</>
-                </ButtonPrimary>
+                </Button>
             </div>
         </div>
     );
