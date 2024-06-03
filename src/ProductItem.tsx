@@ -3,7 +3,7 @@ import TProductItem from "./types/TProductItem";
 import { ShoppingCart } from "lucide-react";
 
 
-function ProductItem({ image, title, description, price }: TProductItem) {
+function ProductItem({ image, title, price }: TProductItem) {
     return (
         <div className="group flex flex-col">
             <div>
@@ -23,7 +23,7 @@ function ProductItem({ image, title, description, price }: TProductItem) {
             </div>
 
             <div className="mt-4">
-                <ButtonPrimary className="w-full flex justify-center items-center">
+                <ButtonPrimary className="w-full flex justify-center items-center" buttonType="primary">
                     <><ShoppingCart className="mr-2" /> Add to Cart</>
                 </ButtonPrimary>
             </div>
