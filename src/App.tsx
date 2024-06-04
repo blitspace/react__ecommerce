@@ -1,8 +1,8 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
-import { AppContext } from './context/AppContext';
+import { AppContext, defaultStore } from './context/AppContext';
 import Store from './types/Store';
 import ProductList from './ProductList';
 import {
@@ -18,37 +18,7 @@ const queryClient = new QueryClient()
 
 
 function App() {
-    const [store] = useState<Store>({
-        theme: {
-            darkMode: false,
-        },
-        menu: [
-            {
-                label: 'About',
-                url: '',
-            },
-            {
-                label: 'Careers',
-                url: '',
-            },
-            {
-                label: 'History',
-                url: '',
-            },
-            {
-                label: 'Services',
-                url: '',
-            },
-            {
-                label: 'Projects',
-                url: '',
-            },
-            {
-                label: 'Blogs',
-                url: '',
-            },
-        ]
-    });
+    const [store] = useState<Store>(defaultStore);
 
     return (
         <QueryClientProvider client={queryClient}>
