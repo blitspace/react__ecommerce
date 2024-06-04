@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { ReactComponent as Logo } from '../public/Logo.svg';
-import { ReactComponent as MenuIcon } from '../public/Menu.svg';
+import { ReactComponent as Logo } from './assets/Logo.svg';
+import { ReactComponent as MenuIcon } from './assets/Menu.svg';
 import { AppContext } from './context/AppContext';
 
 
