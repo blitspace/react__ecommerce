@@ -1,4 +1,4 @@
-import { useEffect, useRef, memo } from "react";
+import { useRef, memo } from "react";
 
 
 interface FilterInputSearchProps {

@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { AppContext } from './context/AppContext';
 
-import { ReactComponent as FacebookLogo } from '../public/Facebook.svg';
-import { ReactComponent as InstagramLogo } from '../public/Instagram.svg';
-import { ReactComponent as TwitterLogo } from '../public/Twitter.svg';
-import { ReactComponent as GitHubLogo } from '../public/GitHub.svg';
-import { ReactComponent as DribbleLogo } from '../public/Dribble.svg';
-import { ReactComponent as LogoWLabel } from '../public/LogoWLabel.svg';
+import { ReactComponent as FacebookLogo } from './assets/Facebook.svg';
+import { ReactComponent as InstagramLogo } from './assets/Instagram.svg';
+import { ReactComponent as TwitterLogo } from './assets/Twitter.svg';
+import { ReactComponent as GitHubLogo } from './assets/GitHub.svg';
+import { ReactComponent as DribbleLogo } from './assets/Dribble.svg';
+import { ReactComponent as LogoWLabel } from './assets/LogoWLabel.svg';
 
 
 const socialIcons = [
