@@ -3,9 +3,10 @@ import Button from "./Button";
 import FilterInputSearch from "./FilterSearch";
 import { ArrowDown01, ArrowDownAZ, Filter as FilterIcon } from "lucide-react";
 
-interface FilterProps {};
 
-function Filter({}: FilterProps) {
+// interface FilterProps {};
+
+function Filter() {
     const iconsStyle = {
         display: 'inline-block',
         verticalAlign: 'middle',
