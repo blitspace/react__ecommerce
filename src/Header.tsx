@@ -9,17 +9,9 @@ interface HeaderProps { };
 function Header({}: HeaderProps) {
     const appContext = useContext(AppContext);
 
+    const darkMode = appContext?.store?.theme?.darkMode;
+
     return (<>
-    <button
-        className='bg-blue-300 py-2 px-4'
-        onClick={
-            () => appContext?.updateStore({
-                ...appContext?.store,
-                menu: [],
-                theme: { darkMode:!appContext?.store?.theme?.darkMode }
-            })
-        }
-    >Reset menu -- {appContext?.store.theme?.darkMode ? 'darkmode' : 'lightmode'}</button>
     <header className="bg-white">
         <div className="flex h-16 items-center gap-8 px-4 sm:px-6 lg:px-8">
             <a className="block text-teal-600" href="#">
@@ -40,6 +32,17 @@ function Header({}: HeaderProps) {
 
                 <div className="flex items-center gap-4">
                     <div className="sm:flex sm:gap-4">
+                        <button
+                            className={`block rounded-md text-sm ${darkMode ? 'bg-gray-300' : 'bg-blue-300'} py-2.5 px-5`}
+                            onClick={
+                                () => appContext?.updateStore({
+                                    ...appContext?.store,
+                                    menu: [],
+                                    theme: { darkMode: !darkMode }
+                                })
+                            }
+                        >Reset menu -- {darkMode ? 'darkmode' : 'lightmode'}</button>
+
                         <a
                             className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
                             href="#"

@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { AppContext } from "./context/AppContext";
-import defaultStore from "./types/Store";
 import Store from "./types/Store";
 
 
-function AppContextProvider({ children }: { children: any }) {
+interface AppContextProviderProps {
+  children: any;
+}
+
+function AppContextProvider({ children }: AppContextProviderProps) {
   const [store, setStore] = useState<Store>({
     theme: {
         darkMode: false,
