@@ -10,6 +10,16 @@ function Header({}: HeaderProps) {
     const appContext = useContext(AppContext);
 
     return (<>
+    <button
+        className='bg-blue-300 py-2 px-4'
+        onClick={
+            () => appContext?.updateStore({
+                ...appContext?.store,
+                menu: [],
+                theme: { darkMode:!appContext?.store?.theme?.darkMode }
+            })
+        }
+    >Reset menu -- {appContext?.store.theme?.darkMode ? 'darkmode' : 'lightmode'}</button>
     <header className="bg-white">
         <div className="flex h-16 items-center gap-8 px-4 sm:px-6 lg:px-8">
             <a className="block text-teal-600" href="#">
