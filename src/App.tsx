@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
-import { AppContext, defaultStore } from './context/AppContext';
+import { AppContext } from './context/AppContext';
 import Store from './types/Store';
 import ProductList from './ProductList';
 import {
@@ -11,18 +11,16 @@ import {
 } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import Counter from './Counter';
+import AppContextProvider from './AppContextProvider';
 
 
 
 const queryClient = new QueryClient()
 
-
 function App() {
-    const [store] = useState<Store>(defaultStore);
-
     return (
         <QueryClientProvider client={queryClient}>
-            <AppContext.Provider value={store}>
+            <AppContextProvider>
                 <ReactQueryDevtools initialIsOpen={false} />
                 <div className="App">
                     <header className="App-header">
@@ -36,7 +34,7 @@ function App() {
                         <Footer />
                     </footer>
                 </div>
-            </AppContext.Provider>
+            </AppContextProvider>
         </QueryClientProvider>
     );
 }
