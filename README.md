@@ -1,3 +1,6 @@
+
+![Screenshot 2024-06-15 111509](https://github.com/blitspace/react__ecommerce/assets/167638196/0cc67a22-4725-4e1a-86ca-e0398ed7b3cc)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
