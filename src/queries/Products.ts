@@ -8,7 +8,7 @@ function ProductsQuery() {
     return useQuery<TProductItem[]>({
         queryKey: ['products'],
         queryFn: async () => {
-            console.log('%cFetching', 'padding: 4px 12px; background-color: orange');
+            console.log('%cFetching Items', 'padding: 4px 12px; background-color: orange');
 
             const response = await fetch(Settings.api_source);
             const data = await response.json();

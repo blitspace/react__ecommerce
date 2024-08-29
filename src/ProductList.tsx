@@ -13,7 +13,7 @@ function ProductList() {
     const productList = useMemo(() => q.data, [q.data]);
 
     if (q.isFetching) {
-        return (<h2>Loading...</h2>);
+        return (<h2>Loading products...</h2>);
     }
 
     if (q.isSuccess) {

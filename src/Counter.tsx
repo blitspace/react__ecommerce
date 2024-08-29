@@ -5,10 +5,6 @@ function Counter() {
 
     return (
         <section>
-            {q.isFetching && (<>
-                Loading...
-            </>)}
-
             {q.isSuccess && (<>
                 <div>{q?.data?.length} Items Found</div>
             </>)}

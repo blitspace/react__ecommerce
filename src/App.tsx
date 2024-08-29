@@ -14,7 +14,6 @@ import Counter from './Counter';
 import AppContextProvider from './AppContextProvider';
 
 
-
 const queryClient = new QueryClient()
 
 function App() {
