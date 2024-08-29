@@ -20,15 +20,20 @@ function ProductList() {
         console.log(q.data);
     }
 
-    if (q.isFetched) {
-        console.log(q.data);
-    }
+    // if (q.isFetched) {
+    //     console.log(q.data);
+    // }
 
     return (<>
         <Filter />
 
         <section>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-8 gap-12">
+            <div className="grid
+                grid-cols-2
+                md:grid-cols-4
+                xl:grid-cols-6
+                gap-12"
+            >
                 {productList?.map((i: TProductItem) => (
                     <Fragment key={i.id}>
                         <ProductItem {...i} />

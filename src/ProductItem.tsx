@@ -1,14 +1,24 @@
 import Button from "./Button";
+import Quantity from "./Quantity";
 import TProductItem from "./types/TProductItem";
 import { ShoppingCart } from "lucide-react";
 
+const usd = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+});
 
-function ProductItem({ image, title, price }: TProductItem) {
+function ProductItem({ category, images, title, price }: TProductItem) {
+    const productPrice = usd.format(price);
+    const productImage = images?.[0]
+            .replace('["', '')
+            .replace('"]', '');
+
     return (
         <div className="group flex flex-col">
             <div>
                 <img
-                    src={image}
+                    src={productImage}
                     alt=""
                     className="w-full object-cover aspect-square object-top"
                 />
@@ -19,13 +29,19 @@ function ProductItem({ image, title, price }: TProductItem) {
                     <h3 className="text-gray-900 x--group-hover:underline x--group-hover:underline-offset-4">{title}</h3>
                 </div>
 
-                <p className="text-gray-900 font-bold">${price}</p>
+                <p className="text-gray-900 font-bold">{productPrice}</p>
             </div>
+
+            <Quantity />
 
             <div className="mt-4">
                 <Button className="w-full flex justify-center items-center" buttonType="primary">
                     <><ShoppingCart className="mr-2" /> Add to Cart</>
                 </Button>
+            </div>
+
+            <div className="mt-4">
+                <small className="text-gray-500">{category.name}</small>
             </div>
         </div>
     );

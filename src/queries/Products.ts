@@ -10,7 +10,7 @@ function ProductsQuery() {
         queryFn: async () => {
             console.log('%cFetching Items', 'padding: 4px 12px; background-color: orange');
 
-            const response = await fetch(Settings.api_source);
+            const response = await fetch(Settings.api_source + '?limit=10');
             const data = await response.json();
 
             return data;
