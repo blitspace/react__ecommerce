@@ -16,9 +16,9 @@ function ProductList() {
         return (<h2>Loading products...</h2>);
     }
 
-    if (q.isSuccess) {
-        console.log(q.data);
-    }
+    // if (q.isSuccess) {
+    //     console.log(q.data);
+    // }
 
     // if (q.isFetched) {
     //     console.log(q.data);
@@ -29,10 +29,10 @@ function ProductList() {
 
         <section>
             <div className="grid
-                grid-cols-2
-                md:grid-cols-4
-                xl:grid-cols-6
-                gap-12"
+                    grid-cols-2
+                    md:grid-cols-4
+                    2xl:grid-cols-6
+                    gap-12"
             >
                 {productList?.map((i: TProductItem) => (
                     <Fragment key={i.id}>

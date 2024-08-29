@@ -22,7 +22,7 @@ function App() {
             <AppContextProvider>
                 <ReactQueryDevtools initialIsOpen={false} />
                 <div className="App">
-                    <header className="App-header">
+                    <header className="App-header sticky top-0">
                         <Header />
                     </header>
                     <section className="App-content">

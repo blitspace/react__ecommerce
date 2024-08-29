@@ -3,6 +3,7 @@ import { ReactComponent as Logo } from './assets/Logo.svg';
 import { ReactComponent as MenuIcon } from './assets/Menu.svg';
 import { AppContext } from './context/AppContext';
 import { Sun, SunMoon  } from "lucide-react";
+import CategoriesMenu from './CategoriesMenu';
 
 
 interface HeaderProps { };
@@ -13,22 +14,25 @@ function Header({}: HeaderProps) {
     const darkMode = appContext?.store?.theme?.darkMode;
 
     return (<>
-    <header className="bg-white">
+    <div className="bg-white">
         <div className="flex h-16 items-center gap-8 px-4 sm:px-6 lg:px-8">
-            <a className="block text-teal-600" href="#">
-                <span className="sr-only">Home</span>
-                <Logo width={40} />
-            </a>
-
             <div className="flex flex-1 items-center justify-end md:justify-between">
+                <div>
+                    <a className="block text-teal-600" href="#">
+                        <span className="sr-only">Home</span>
+                        <Logo width={40} />
+                    </a>
+                </div>
+
                 <nav aria-label="Global" className="hidden md:block">
-                    <ul className="flex items-center gap-6 text-sm">
+                    <CategoriesMenu />
+                    {/* <ul className="flex items-center gap-6 text-sm">
                         {appContext?.store?.menu?.map(i => (
                             <li key={i.label}>
                                 <a className="text-gray-500 transition hover:text-gray-500/75" href={i.url}>{i.label}</a>
                             </li>
                         ))}
-                    </ul>
+                    </ul> */}
                 </nav>
 
                 <div className="flex items-center gap-4">
@@ -68,7 +72,9 @@ function Header({}: HeaderProps) {
                 </div>
             </div>
         </div>
-    </header>
+        <div className="px-4 sm:px-6 lg:px-8">
+        </div>
+    </div>
     </>);
 }
 
