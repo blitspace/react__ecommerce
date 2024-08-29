@@ -18,7 +18,7 @@ function Filter() {
 
     return (
         <section className="mb-8 py-4 border-t border-b">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between items-center">
                 <div><FilterIcon style={iconsStyle} className="text-teal-700" /> Filter</div>
                 <div>
                     <FilterInputSearch onChange={handleSearch} />

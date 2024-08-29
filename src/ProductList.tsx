@@ -27,18 +27,23 @@ function ProductList() {
     return (<>
         <Filter />
 
-        <section>
-            <div className="grid
-                    grid-cols-2
-                    md:grid-cols-4
-                    2xl:grid-cols-6
-                    gap-12"
-            >
-                {productList?.map((i: TProductItem) => (
-                    <Fragment key={i.id}>
-                        <ProductItem {...i} />
-                    </Fragment>
-                ))}
+        <section className="grid grid-cols-12">
+            <div className="col-span-3 hidden md:block">
+                Filter
+            </div>
+            <div className="col-span-12 md:col-span-9">
+                <div className="grid
+                        grid-cols-2
+                        xl:grid-cols-4
+                        3xl:grid-cols-6
+                        gap-6"
+                >
+                    {productList?.map((i: TProductItem) => (
+                        <Fragment key={i.id}>
+                            <ProductItem {...i} />
+                        </Fragment>
+                    ))}
+                </div>
             </div>
         </section>
     </>);
