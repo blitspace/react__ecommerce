@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { ReactComponent as Logo } from './assets/Logo.svg';
 import { ReactComponent as MenuIcon } from './assets/Menu.svg';
 import { AppContext } from './context/AppContext';
+import { Sun, SunMoon  } from "lucide-react";
 
 
 interface HeaderProps { };
@@ -41,7 +42,7 @@ function Header({}: HeaderProps) {
                                     theme: { darkMode: !darkMode }
                                 })
                             }
-                        >Reset menu -- {darkMode ? 'darkmode' : 'lightmode'}</button>
+                        >{darkMode ? <SunMoon /> : <Sun />}</button>
 
                         <a
                             className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
