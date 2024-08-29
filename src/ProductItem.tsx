@@ -1,4 +1,5 @@
 import Button from "./Button";
+import Quantity from "./Quantity";
 import TProductItem from "./types/TProductItem";
 import { ShoppingCart } from "lucide-react";
 
@@ -31,10 +32,16 @@ function ProductItem({ category, images, title, price }: TProductItem) {
                 <p className="text-gray-900 font-bold">{productPrice}</p>
             </div>
 
+            <Quantity />
+
             <div className="mt-4">
                 <Button className="w-full flex justify-center items-center" buttonType="primary">
                     <><ShoppingCart className="mr-2" /> Add to Cart</>
                 </Button>
+            </div>
+
+            <div className="mt-4">
+                <small className="text-gray-500">{category.name}</small>
             </div>
         </div>
     );
